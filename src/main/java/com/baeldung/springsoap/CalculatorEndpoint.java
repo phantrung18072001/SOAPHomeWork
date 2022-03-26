@@ -20,12 +20,4 @@ public class CalculatorEndpoint {
         response.setResult(cal.calculate(request.getNumber1(),request.getNumber2(),request.getOperator()));
         return response;
     }
-
-    @PayloadRoot(namespace = NAMESPACE_URI, localPart = "expRequest")
-    @ResponsePayload
-    public ExpResponse exp(@RequestPayload ExpRequest request) {
-        ExpResponse response = new ExpResponse();
-        response.setResult(cal.exp(request.getNumber()));
-        return response;
-    }
 }
